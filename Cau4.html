@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+
+</head>
+<body>
+<canvas id="mycanvas" width="300" height="400"></canvas>
+
+<script>
+function Circle(x,y,radius,color){
+    this.x= x;
+    this.y= y;
+    this.radius = radius;
+    this.color = color;
+    this.render = function(){
+        let cvs= document.getElementById('mycanvas').getContext('2d');
+        cvs.arc(this.x, this.y,this.radius,0,2*Math.PI);
+        cvs.strokeStyle=this.color;
+        cvs.stroke();
+    }
+}
+
+let myCircle= new Circle(100,100,100,'#000000');
+myCircle.render();
+
+</script>
+</body>
+</html>
